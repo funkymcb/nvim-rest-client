@@ -1,0 +1,1 @@
+-- things to automatically load on nvim startup go here
