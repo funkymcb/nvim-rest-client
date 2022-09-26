@@ -1,0 +1,11 @@
+@apiVersion = v2
+
+# @name types
+GET https://pokeapi.co/api/{{apiVersion}}/type
+
+###
+
+@fightingTypeURL = {{types.response.body.$.results[?(@.name=='fighting')].url}}
+
+# @name fighting
+GET {{fightingTypeURL}}
