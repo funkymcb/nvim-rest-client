@@ -8,7 +8,17 @@ Nvim-Rest-Client utilizes telescope as its "UI"
 - [nvim-telescope](https://github.com/nvim-telescope/telescope.nvim)
 
 ## Installation
-should work with any plugin manager of neovim
+Should work with any plugin manager for Neovim. For example using [packer.nvim](https://github.com/wbthomason/packer.nvim):
+```lua
+return require('packer').startup(function(use)
+   use {
+      'funkymcb/nvim-rest-client',
+      requires = {
+         'nvim-telescope/telescope.nvim',
+      }
+   }
+end)
+```
 
 ## Setup
 Full Setup with default values. Change them in your neovim config as needed:
