@@ -1,1 +1,1 @@
-require("nvim-rest-client.fileparser")
+-- Things to be preloaded belong here

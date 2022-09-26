@@ -1,7 +1,6 @@
 # nvim-rest-client
-Rest Client Plugin for neovim.  
-Inspired by [Rest Client Plugin of VS Code](https://github.com/Huachao/vscode-restclient)  
-The plugin aims to be fully compatible with the .http files of the above mentioned VS Code Plugin
+Rest Client Plugin for neovim. Inspired by [Rest Client Plugin of VS Code](https://github.com/Huachao/vscode-restclient)  
+The plugin aims to be fully compatible with the .http files of the above mentioned VS Code Plugin and its features
 
 ## Requirements
 - [Neovim](https://github.com/neovim/neovim) >= 0.7.0
