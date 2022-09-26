@@ -1,7 +1,3 @@
-local pickers = require("telescope.pickers")
-local finders = require("telescope.finders")
-local sorters = require("telescope.sorters")
-
 local M = {}
 
 -- search_http_files returns table of stings of all ".http" files
@@ -61,14 +57,15 @@ M.init = function(cfg)
    local http_files = search_http_files(depth)
    local requests = parse_http_files(http_files)
 
-   local opts = {
-      finder = finders.new_table(requests),
-      sorter = sorters.get_fzy_sorter({})
-   }
+   -- TODO add telescope logic to another module and add function
+   -- local opts = {
+   --    finder = finders.new_table(requests),
+   --    sorter = sorters.get_fzy_sorter({})
+   -- }
 
-   local picker = pickers.new(opts, {})
+   -- local picker = pickers.new(opts, {})
 
-   picker:find()
+   -- picker:find()
 end
 
 return M
