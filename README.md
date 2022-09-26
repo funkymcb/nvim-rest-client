@@ -16,7 +16,7 @@ Full Setup with default values. Change them in your neovim config as needed:
 require('nvim-rest-client').setup({
    fileparser = {       -- fileparser searches for .http files and parses them into request objects
       enable = true,        -- if disabled the fileparser needs to be triggered manually before using
-      search_depth = 1,     -- how deep are the .http files in the $PWD
+      search_depth = 1,     -- how deep are the .http files nested in the $PWD
    }
 })
 ```
@@ -26,7 +26,9 @@ require('nvim-rest-client').setup({
 TBD
 
 ## Roadmap
-- [ ] implement file parses for .http files
+- [ ] implement file parser for .http files
+    - [ ] search for files depending on search_depth
+    - [ ] split file by `###` and store them into request objects
 - [ ] implement telescope integration for requests
 - [ ] implement request logic
 - [ ] implement language server or else for syntax highlighting and error output
