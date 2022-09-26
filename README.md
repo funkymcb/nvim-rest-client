@@ -25,7 +25,6 @@ Full Setup with default values. Change them in your neovim config as needed:
 ```lua
 require('nvim-rest-client').setup({
    fileparser = {       -- fileparser searches for .http files and parses them into request objects
-      enable = true,        -- if disabled the fileparser needs to be triggered manually before using
       search_depth = 1,     -- how deep are the .http files nested in the $PWD
    }
 })
