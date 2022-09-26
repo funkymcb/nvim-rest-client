@@ -10,9 +10,12 @@ local config = {}
 
 M.setup = function(cfg)
    config = vim.tbl_extend('force', default_config, cfg or {})
-   if config.enable then
-      print(string.format('fileparser is active! search_depth = %d', config.search_depth))
+
+   if not config.enable then
+      return
    end
+
+   require('nvim-rest-client.fileparser.search').init(config)
 end
 
 return M
