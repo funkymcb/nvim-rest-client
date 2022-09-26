@@ -1,6 +1,6 @@
 local M = {}
 
-M.request = function(name)
+function M.request(name)
    print(string.format("Hello %s", name))
 end
 

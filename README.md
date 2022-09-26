@@ -36,9 +36,11 @@ require('nvim-rest-client').setup({
 TBD
 
 ## Roadmap
-- [ ] implement file parser for .http files
-    - [ ] search for files depending on search_depth
-    - [ ] split file by `###` and store them into request objects
-- [ ] implement telescope integration for requests
+- [x] implement file parser for .http files
+    - [x] search for files depending on search_depth
+    - [x] split file by `###` and store them into requests
+    - [ ] write tests for http file parsing
+    - [ ] define request objects
+- [x] implement telescope integration for requests
 - [ ] implement request logic
 - [ ] implement language server or else for syntax highlighting and error output

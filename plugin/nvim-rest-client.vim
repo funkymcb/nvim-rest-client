@@ -10,3 +10,4 @@ exe "lua package.path = package.path .. ';" . s:lua_rocks_deps_loc . "/lua-?/ini
 
 " Expose functions to neovim
 command! -nargs=1 NvimRestClientRequest lua require("nvim-rest-client").request(<args>)
+command! -nargs=0 NvimRestClientFindRequests lua require("nvim-rest-client").find_requests()
