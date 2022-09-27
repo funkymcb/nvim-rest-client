@@ -13,15 +13,21 @@ local function search_http_files(search_depth)
       end
    end
 
+   if i == 0 then 
+      print("no .http files found in workind directory")
+   end
+
    return http_files
 end
 
 function M.init(cfg)
    local depth = cfg.search_depth
    local http_files = search_http_files(depth)
-   local requests = require("nvim-rest-client.fileparser.parse").parse_http_files(http_files)
 
-   return requests
+   if next(http_files) ~= nil then
+      local requests = require("nvim-rest-client.fileparser.parse").parse_http_files(http_files)
+      return requests
+   end
 end
 
 return M

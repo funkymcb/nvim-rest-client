@@ -5,7 +5,6 @@ local sorters = require("telescope.sorters")
 local M = {}
 
 local default_config = {
-   enable = true,
    search_depth = 1
 }
 
@@ -17,6 +16,10 @@ end
 
 function M.show_requests()
    local requests = require('nvim-rest-client.fileparser.search').init(config)
+
+   if requests == nil then
+      return
+   end
 
    local opts = {
       finder = finders.new_table(requests),
