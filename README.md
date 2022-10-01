@@ -1,4 +1,4 @@
-# Nvim-Rest-Client
+# WIP: Nvim-Rest-Client
 Rest Client Plugin for Neovim. Inspired by [Rest Client Plugin for VS Code](https://github.com/Huachao/vscode-restclient)  
 The plugin aims to be fully compatible with the .http files of the above mentioned VS Code Plugin and its features  
 Nvim-Rest-Client utilizes telescope as its "UI"
@@ -39,7 +39,7 @@ TBD
     - [x] search for files depending on search_depth
     - [x] split file by `###` and store them into requests
     - [ ] write tests for http file parsing
-    - [ ] define request objects
+    - [x] define request objects
 - [x] implement telescope integration for requests
 - [ ] implement request logic
 - [ ] implement language server or else for syntax highlighting and error output
