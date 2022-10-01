@@ -7,12 +7,15 @@ function M.parse_http_files(files)
 
    for _, file in pairs(files) do
       for line in io.lines(file) do
-         local hashtag_start, hashtag_end = string.find(line, "###")
+         local seperator_start, _ = string.find(line, "###")
          local at_start, _ = string.find(line, "@")
+         local label = ""
+         local headers = {}
 
          -- variable declaration
          if at_start == 1 or at_start == 3 then
             -- TODO add variable logic here
+            -- TODO check label logic here?
             goto continue
          end
 
@@ -22,13 +25,14 @@ function M.parse_http_files(files)
          end
 
          -- skip if line is seperator
-         if hashtag_start ~= nil then
-            if hashtag_start > 0 and hashtag_end <= 3 then
+         if seperator_start~= nil then
+            if seperator_start > 0 then
                goto continue
             end
          end
 
-         requests[#requests + 1] = line
+         local r = require("nvim-rest-client.request"):init(label, line, headers)
+         table.insert(requests, r)
          ::continue::
       end
    end

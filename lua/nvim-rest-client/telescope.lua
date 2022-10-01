@@ -21,8 +21,13 @@ function M.show_requests()
       return
    end
 
+   local request_short_strings = {}
+   for _, r in pairs(requests) do
+      table.insert(request_short_strings, r.short_string)
+   end
+
    local opts = {
-      finder = finders.new_table(requests),
+      finder = finders.new_table(request_short_strings),
       sorter = sorters.get_fzy_sorter({})
    }
 
