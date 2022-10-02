@@ -34,6 +34,12 @@ function M.parse_http_files(files)
 
          id = id + 1
          local r = require("nvim-rest-client.request"):init(id, label, line, headers)
+
+         -- invalid request (eg. invalid method)
+         if not r:validate() then
+            goto continue
+         end
+
          table.insert(requests, r)
          ::continue::
       end
