@@ -1,4 +1,5 @@
 local Request = {
+   id = 0,
    label = "unlabeled",
    method = "",
    uri = "",
@@ -30,25 +31,7 @@ local function parse_request_string(str)
    return method, uri
 end
 
-function Request:init(label, request_str, headers)
-   local request = {}
-   local method, uri = parse_request_string(request_str)
-
-   if label == "" then label = "unlabeled" end
-   local short_string = string.format("%s: %s %s", label, method, uri)
-
-   print(method, uri, short_string)
-   setmetatable(request, Request)
-   request.label = label
-   request.method = method
-   request.uri = uri
-   request.headers = headers
-   request.short_string = short_string
-
-   return request
-end
-
-function Request:valid_methods()
+function Request:validate()
    local valid_methods = {
       "OPTIONS",
       "GET",
@@ -59,7 +42,30 @@ function Request:valid_methods()
       "TRACE",
       "CONNECT",
    }
-   return valid_methods
+
+   for _, v in pairs(valid_methods) do
+      if self.method == v then return true end
+   end
+
+   return false
+end
+
+function Request:init(id, label, request_str, headers)
+   local request = {}
+   local method, uri = parse_request_string(request_str)
+
+   if label == "" then label = "unlabeled" end
+   local short_string = string.format("ID %d: '%s' %s %s", id, label, method, uri)
+
+   setmetatable(request, Request)
+   request.id = id
+   request.label = label
+   request.method = method
+   request.uri = uri
+   request.headers = headers
+   request.short_string = short_string
+
+   return request
 end
 
 return Request

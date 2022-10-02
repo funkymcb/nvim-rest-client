@@ -1,6 +1,9 @@
+local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
 local finders = require("telescope.finders")
 local pickers = require("telescope.pickers")
 local sorters = require("telescope.sorters")
+-- local previewers = require("telescope.previewers")
 
 local M = {}
 
@@ -12,6 +15,12 @@ local config = {}
 
 function M.init(cfg)
    config = vim.tbl_extend('force', default_config, cfg or {})
+end
+
+local function make_request(prompt_bufnr)
+   local selected = action_state.get_selected_entry()
+   require('nvim-rest-client').request(selected)
+   actions.close(prompt_bufnr)
 end
 
 function M.show_requests()
@@ -27,13 +36,31 @@ function M.show_requests()
    end
 
    local opts = {
+      layout_strategy = "vertical",
+      layout_config = {
+         height = 20,
+         width = 0.5,
+         prompt_position = "top"
+      },
+      sorting_strategy = "ascending",
+
       finder = finders.new_table(request_short_strings),
-      sorter = sorters.get_fzy_sorter({})
+      sorter = sorters.get_fzy_sorter(),
+
+      attach_mappings = function(prompt_bufnr, map)
+         map("i", "<CR>", make_request)
+
+         map("n", "<CR>", make_request)
+         return true
+      end,
    }
 
    local picker = pickers.new(opts, {})
-
    picker:find()
+
+   -- TODO implement previewer
+   -- local previewer = previewers.new_termopen_previewer()
+   -- previewer:new()
 end
 
 return M

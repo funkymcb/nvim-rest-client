@@ -4,6 +4,7 @@ local M = {}
 -- TODO write TESTS and more TESTS for this logic!
 function M.parse_http_files(files)
    local requests = {}
+   local id = 0
 
    for _, file in pairs(files) do
       for line in io.lines(file) do
@@ -31,7 +32,8 @@ function M.parse_http_files(files)
             end
          end
 
-         local r = require("nvim-rest-client.request"):init(label, line, headers)
+         id = id + 1
+         local r = require("nvim-rest-client.request"):init(id, label, line, headers)
          table.insert(requests, r)
          ::continue::
       end
