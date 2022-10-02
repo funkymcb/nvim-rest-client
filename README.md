@@ -40,15 +40,14 @@ The nvim-rest-client adds one command to vim:
 
 This command initializes the search and parsing of .http files in the $PWD  
 If .http files are found it will open a telescope prompt with all requests.  
-By pressing <CR> the request will be executed.
+By pressing Enter the request will be executed.
 
-You could map this command to anything you like. I use it like the following  
+You could map this command to anything you like. I use it like the following:  
+
 `nnoremap("<leader>fr", ":NvimRestClientFindRequests<CR>")`
 
 ## Local Developmet
-for local development you can clone my testing api which provides various basic endpoints for testing.
-
-- [testing-api](git clone git@github.com:funkymcb/rest-client-test-api.git)
+for local development you can clone my [testing api](git clone git@github.com:funkymcb/rest-client-test-api.git) which provides various basic endpoints for testing.
 
 just run `go run main.go`
 The api listens on port 8000. Your .http testing files should look like this:
