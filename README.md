@@ -47,7 +47,7 @@ You could map this command to anything you like. I use it like the following:
 `nnoremap("<leader>fr", ":NvimRestClientFindRequests<CR>")`
 
 ## Local Developmet
-for local development you can clone my [testing api](git@github.com:funkymcb/rest-client-test-api.git) which provides various basic endpoints for testing.
+for local development you can clone my [testing api](https://github.com/funkymcb/rest-client-test-api) which provides various basic endpoints for testing.
 
 just run `go run main.go`
 The api listens on port 8000. Your .http testing files should look like this:
