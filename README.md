@@ -48,6 +48,9 @@ You could map this command to anything you like. I use it like the following:
 
 `nnoremap("<leader>fr", ":NvimRestClientFindRequests<CR>")`
 
+For now you can make Requests like the following:  
+`echo NvimRestClientRequest("GET", "http://localhost:8000/get")`
+
 ## Local Developmet
 for local development you can clone my [testing api](https://github.com/funkymcb/rest-client-test-api) which provides various basic endpoints for testing.
 
