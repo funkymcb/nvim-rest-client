@@ -1,7 +1,9 @@
 # WIP: Nvim-Rest-Client
 Rest Client Plugin for Neovim. Inspired by [Rest Client Plugin for VS Code](https://github.com/Huachao/vscode-restclient)  
 The plugin aims to be fully compatible with the .http files of the above mentioned VS Code Plugin and its features  
-Nvim-Rest-Client utilizes telescope as its "UI"
+Nvim-Rest-Client utilizes telescope as its "UI"  
+
+Since i failed getting the lua socket running i build the binaries for request handling with golang in ./go/api
 
 ## Requirements
 - [Neovim](https://github.com/neovim/neovim) >= 0.7.0

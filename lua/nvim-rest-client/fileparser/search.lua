@@ -7,7 +7,7 @@ local function search_http_files(search_depth)
    local pwd_files = io.popen('find . -maxdepth '..search_depth):lines()
 
    for file in pwd_files do
-      local is_http_file = string.find(file, ".http")
+      local is_http_file = string.find(file, ".http", 0, true)
       if (is_http_file ~= nil) then
          i = i + 1
          http_files[i] = file
