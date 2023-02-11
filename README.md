@@ -8,8 +8,6 @@ Since i failed getting the lua socket running i build the binaries for request h
 ## Requirements
 - [Neovim](https://github.com/neovim/neovim) >= 0.7.0
 - [nvim-telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [luasocket](https://github.com/lunarmodules/luasocket)
-    to install luasocket run `luarocks install luasocket`
 
 ## Installation
 Should work with any plugin manager for Neovim. For example using [packer.nvim](https://github.com/wbthomason/packer.nvim):

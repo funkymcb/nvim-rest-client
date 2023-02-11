@@ -7,4 +7,4 @@ require (
 	github.com/neovim/go-client v1.2.1
 )
 
-require golang.org/x/net v0.0.0-20221014081412-f15817d10f9b // indirect
+require golang.org/x/net v0.6.0 // indirect

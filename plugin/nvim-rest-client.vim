@@ -21,3 +21,4 @@ call remote#host#RegisterPlugin('nvim_rest_client', '0', [
 
 " Expose functions to neovim
 command! -nargs=0 NvimRestClientFindRequests lua require("nvim-rest-client").find_requests()
+command! -nargs=0 NvimRestClientMakeRequest lua require("nvim-rest-client").request()

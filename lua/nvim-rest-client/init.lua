@@ -1,4 +1,4 @@
-local api = require("nvim-rest-client.api")
+local http = require("nvim-rest-client.http")
 local telescope = require("nvim-rest-client.telescope")
 local M = {}
 
@@ -10,6 +10,6 @@ function M.setup(opt)
 end
 
 M.find_requests = telescope.show_requests
-M.request = api.request
+M.request = http.request
 
 return M
